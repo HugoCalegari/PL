@@ -68,7 +68,7 @@ function [xot, fot, h] = funcsimplex(m,n,A,b,c)
 
         C(l_sai) = j_entra; %Atualização dos índices da matriz da partição básica
 
-        %Verifica se o n´umero de iterações máximo foi atingido. Caso tenha alterar o valor de n_max
+        %Verifica se o número de iterações máximo foi atingido. Caso alcançado alterar o valor de max_it
         if(h == max_it)
             fprintf('Número máximo de iterações executado\n\n');
             return
