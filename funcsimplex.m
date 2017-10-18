@@ -8,8 +8,8 @@ function [xot, fot, h] = funcsimplex(m,n,A,b,c)
     C = ((n-m+1):n);
 
     %Parte da iteração
-    max_it = 20;        %Realiza-se no máximo 20 iterações; caso seja necessário muda-se para outro valor plausível
-    for h = 1:max_it    %Loop principal
+    maxit = 20;        %Realiza-se no máximo 20 iterações; caso seja necessário muda-se para outro valor plausível
+    for h = 1:maxit    %Loop principal
 
         % Cria-se a partição básica inicial e calcula a solução básica inicial pela sua inversa.
         B=A(:,C); %Partição básica inicial
@@ -18,11 +18,11 @@ function [xot, fot, h] = funcsimplex(m,n,A,b,c)
 
         %Cálculo dos custos relativos
 
-        c_B = c(C);         %Custos básicos associados à partição básica
-        lambda = (c_B'*invB)';   %Cálculo do vetor multiplicador simplex
-        c_r = c' - lambda'*A;    %Vetor de custos relativos
+        cB = c(C);         %Custos básicos associados à partição básica
+        lambda = (cB'*invB)';   %Cálculo do vetor multiplicador simplex
+        cr = c' - lambda'*A;    %Vetor de custos relativos
         
-        H = find(c_r < 0); % Identificação dos índices que possuem o custo relativo menor que zero
+        H = find(cr < 0); % Identificação dos índices que possuem o custo relativo menor que zero
 		
 		%Verificação se a solução é ótima, por meio da identificação dos custos relativos maiores que zero; caso sejam
         %a função condicional a seguir retornará verdadeiro e, assim, simplesmente usar a função "return". Já estamos
@@ -36,13 +36,13 @@ function [xot, fot, h] = funcsimplex(m,n,A,b,c)
         end
 
         %Variável que entrará na base por possuir o custo menor que zero      
-        j_suporte = (find(min(c_r(H)) == c_r)); %Aqui determina-se o custo relativo mínimo; nesta igualdade identifica-se o índice
+        jsuporte = (find(min(cr(H)) == cr)); %Aqui determina-se o custo relativo mínimo; nesta igualdade identifica-se o índice
 	                                            %cujo custo é o menor possível; regra de Dantzig
         
-        j_entra = j_suporte(1); %Caso houver custos relativos mínimos iguais, pegar a primeira posição com custo relativo
+        jentra = jsuporte(1); %Caso houver custos relativos mínimos iguais, pegar a primeira posição com custo relativo
                                 %mínimo
 
-        y = invB*A(:,j_entra); %Cálculo da direção simplex
+        y = invB*A(:,jentra); %Cálculo da direção simplex
         I = find(y > 0); %Determina os índices que possuem as direções positivas para posteriormente calcular o tamanho
                          %do passo        
 
@@ -60,16 +60,16 @@ function [xot, fot, h] = funcsimplex(m,n,A,b,c)
         L = find(x(C)./y == epsilon); %Encontra o índice da solução básica que é igual a epsilon, ou seja, a variável que 
                                       %vai sair da base
 
-        l_sai = L(1);         %Determinação da variável que sai da base
+        lsai = L(1);         %Determinação da variável que sai da base
 
         x(C) = x(C) - epsilon*y; %Estratégia simplex; alteração de como é a variável básica (SlideAula7 - número 26)
         
-        x(j_entra) = epsilon; %O valor da variável que entra é epsilon (perturbação)
+        x(jentra) = epsilon; %O valor da variável que entra é epsilon
 
-        C(l_sai) = j_entra; %Atualização dos índices da matriz da partição básica
+        C(lsai) = jentra; %Atualização dos índices da matriz da partição básica
 
         %Verifica se o número de iterações máximo foi atingido. Caso alcançado alterar o valor de max_it
-        if(h == max_it)
+        if(h == maxit)
             fprintf('Número máximo de iterações executado\n\n');
             return
         end
