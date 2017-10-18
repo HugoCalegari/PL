@@ -1,0 +1,86 @@
+A função do algoritmo simplex, para determinar a solução ótima ou identificar uma solução ilimitada, é denominada "func_simplex.m". Esta função construída lida com problemas de programação linear da forma:
+
+minimizar f(x) = c'x
+sujeito a: Ax <= b; x >=0.
+
+Na forma padrão o problema torna-se:
+
+minimizar f(x) = c'x
+sujeito a: Ax + s = b; x >=0 e s >= 0 
+
+de tal forma que os custos são reajustados para incorporar os custos nulos associados com as variáveis de folga.
+
+Para executar o algoritmo, deve-se verificar o local onde se salvou a função (o diretório onde encontrá-la). Com o Matlab ou Octave aberto digitar, por exemplo (sem as aspas duplas): "cd 'Área de trabalho/'" ou "cd Downloads/". Com isso, o Matlab ou Octave já identifica os conteúdos do diretório, inclusive o arquivo relacionado com a função elaborada em extensão ".m" ("func_simplex.m").
+
+Como entrada, o usuário fornece o número de linhas e colunas (m e n, respectivamente) da Matriz A na forma padronizada, fornece a própria matriz A com as variáveis de folga incluídas, fornece os vetores transpostos b e c relacionados com as restrições e os custos (com os custos nulos das variáveis de folga), respectivamente. Veja a seguir alguns exemplos de como fazer para inicializar as variáveis mencionadas.
+
+1) O número de linhas e colunas da matriz A pode ser fornecida, por exemplo, como: "m = 3; n = 5;".
+
+2) A matriz A dever ser fornecida por linha. Por exemplo, se queremos a matriz 
+A = [ 1 2 1 0
+	  3 4 0 1]
+deve-se digitar como segue (sem as aspas. Veja que o ponto e vírgula no final da linha é simplesmente para que a matriz A não seja impressa depois da sua inicialização): "A = [1 2 1 0; 3 4 0 1];"
+
+3) O vetor b e c devem ser fornecidos da mesma maneira que a matriz A, mas devem ser transpostos. Veja o seguinte exemplo:
+Queremos fornecer como entrada: b = [ 1
+									  2	]
+e c = [5 
+	   6
+	   7
+	   0
+       0].
+Para isso deve-se escrever os seguintes comandos (sem o sinal das aspas): "b = [1 2]';" e "c = [5 6 7 0 0]';". observe que deve-se colocar o sinal da transposição dos vetores de b e c, caso contrário eles serão considerados como vetores linha e terá problemas na execução do algoritmo.
+
+Uma vez inicializada as variáveis de interesse, a maneira de executar o algoritmo para se obter a solução ótima com a função objetivo associada a esta é como se segue:
+
+[x_ot, f_ot] = func_simplex(m,n,A, b, c) (caso se queira ver somente o resultado de x ótimo que minimiza a função objetivo f) e outra forma de se chamar a função é: [x_ot, f_ot, h] = func_simplex(m,n,A, b, c) (nesta maneira as saídas são: x ótimo que minimiza a função objetivo f e o número de iterações necessárias (identificado como h) para se obter a solução ótima).
+
+Observação: a parte da função [x_ot, f_ot] ou [x_ot, f_ot, h] estão relacionadas com as saídas da função e func_simplex(m,n,A, b, c) está relacionada com as entradas da função.
+
+Exemplos:
+
+1)
+m = 3; n = 6;
+A = [1 2 2 1 0 0; 2 1 2 0 1 0; 2 2 1 0 0 1];
+b = [20 20 20]';
+c = [-10 -12 -12 0 0 0]';
+
+Resposta: (solução ótima)
+x_ot = [4 4 4 0 0 0]' com função objetivo: f_ot = -136;
+
+Exemplos tirados das listas de exercício
+2)
+m = 2; n = 4;
+A=[-1 1 1 0; 2 -1 0 1];
+b = [2 6]';
+c = [-1 -1 0 0]';
+
+Resposta: (solução ótima)
+x_ot = [8 10 0 0]' com função objetivo: f_ot = -18
+
+3)
+m = 3; n = 5;
+A = [1 1 1 0 0; 1 0 0 1 0; 0 1 0 0 1];
+b = [4 3 7/2]';
+c = [-2 -1 0 0 0]';
+
+Resposta: (solução ótima)
+x_opt = [3.0 1.0 0.0 0.0 2.5]' com função objetivo: f_opt = -7
+
+4)
+m = 2; n = 6;
+A = [1 1 -1 0 1 0; -1 1 0 -1 0 1];
+b = [2 1]';
+c = [0 0 0 0 1 1]';
+
+Resposta: (solução ótima)
+x_ot = [0.5 1.5 0.0 0.0 0.0 0.0]' com função objetivo: f_ot = 0
+
+5)Exemplo de problema ilimitado:
+m = 2; n = 4;
+A = [-1 -1 1 0; -3 -5 0 1];
+b = [8 30]';
+c = [-4 -5 0 0]';
+
+Problema ilimitado!
+x_ot = [](0x0) com função objetivo: f_ot = -Inf
