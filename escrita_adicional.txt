@@ -1,0 +1,15 @@
+1) Abra o Matlab como na figura "fig1teste";
+
+2) Ao lado direito de "Current Folder" existe uma caixa com três pontos semelhante a reticências (vide "fig2teste"). Ao clicar nesta, selecione o local onde foi salvo o arquivo "funcsimplex.m" (Por exemplo, vide "fig3teste" no qual foi selecionado a área de trabalho, local onde a função do método simplex ("funcsimplex.m") foi salva).
+
+3) Note que ao selecionar o local (diretório) onde está o arquivo da função, ao lado esquerdo da linha de comando exibirá todos documentos encontrados na pasta (vide "fig4teste").
+
+4) Depois da localização em (2) e identificação da função em (3) basta clicar duas vezes na função "funcsimplex.m" para visualizar o código comentado (vide "fig5teste").
+
+5) Para inicializar a matriz, os vetores e o número de linhas e colunas como entrada, basta digitá-los como nos exemplos dados (vide "fig6teste"). Além disso, observe ao lado direito (no "Workspace") da linha de comando que as matrizes foam inicializadas com os valores fornecidos pelo usuário (vide "fig6teste").
+
+6) Para verificar a solução ótima e a função objetivo mínima associada, basta utilizar uma linha de comando como mostrado na figura "fig7teste". Caso queira ver a quantidade de iterações utilizadas para se obter a solução ótima basta adicionar simplesmente um argumento na saída, como na figura "fig8teste".
+
+7) Para inicializar outra matriz, primeiramente digite na linha de comando "clear", para que os valores das variáveis anteriores não sejam reutilizados (vide "fig8teste"). Observe que o "Workspace" visto em (5), agora está vazio, assim como quando aberto o Matlab (vide "fig8teste").
+
+8) Basta digitar as novas entradas e chamar novamente a função para observar a solução ótima. 
