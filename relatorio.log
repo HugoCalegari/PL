@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.8.10)  18 OCT 2017 21:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.8.10)  20 OCT 2017 12:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -803,16 +803,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 143--145
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--156
+Underfull \hbox (badness 10000) in paragraph at lines 146--148
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--159
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--154
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--157
 
  []
 
 [2]
+Underfull \hbox (badness 10000) in paragraph at lines 158--160
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--163
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--166
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--169
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--172
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 181--183
 
  []
@@ -823,52 +858,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 184--186
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--189
+Underfull \hbox (badness 10000) in paragraph at lines 208--210
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--194
+Underfull \hbox (badness 10000) in paragraph at lines 211--213
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--198
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 199--203
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 204--206
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 207--209
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 210--214
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 215--217
+Underfull \hbox (badness 10000) in paragraph at lines 214--216
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 218--222
+Underfull \hbox (badness 10000) in paragraph at lines 219--221
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--225
+Underfull \hbox (badness 10000) in paragraph at lines 222--225
 
  []
 
@@ -887,27 +897,151 @@ Underfull \hbox (badness 10000) in paragraph at lines 234--236
 
  []
 
-[4] (./relatorio.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--241
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--244
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--257
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--260
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 261--263
+
+ []
+
+[4]
+<fig1teste.pdf, id=25, pagebox=cropbox, 597.23125pt x 845.1575pt>
+File: fig1teste.pdf Graphic file (type pdf)
+<use fig1teste.pdf>
+Package pdftex.def Info: fig1teste.pdf  used on input line 270. on input line 2
+70.
+Package pdftex.def Info: Requested size: 418.05902pt x 591.60622pt on input lin
+e 270.
+ [5]
+Overfull \vbox (24.7277pt too high) has occurred while \output is active []
+
+
+[6 <./fig1teste.pdf>]
+<fig2teste2.pdf, id=37, pagebox=cropbox, 597.23125pt x 845.1575pt>
+File: fig2teste2.pdf Graphic file (type pdf)
+<use fig2teste2.pdf>
+Package pdftex.def Info: fig2teste2.pdf  used on input line 276. on input line 
+276.
+Package pdftex.def Info: Requested size: 388.19571pt x 549.34587pt on input lin
+e 276.
+<fig3teste.pdf, id=38, pagebox=cropbox, 597.47943pt x 845.01837pt>
+File: fig3teste.pdf Graphic file (type pdf)
+<use fig3teste.pdf>
+Package pdftex.def Info: fig3teste.pdf  used on input line 282. on input line 2
+82.
+Package pdftex.def Info: Requested size: 418.23274pt x 591.50883pt on input lin
+e 282.
+ [7 <./fig2teste2.pdf>]
+Overfull \vbox (5.07883pt too high) has occurred while \output is active []
+
+
+[8 <./fig3teste.pdf>]
+<fig4teste.pdf, id=52, pagebox=cropbox, 597.47943pt x 845.01837pt>
+File: fig4teste.pdf Graphic file (type pdf)
+<use fig4teste.pdf>
+Package pdftex.def Info: fig4teste.pdf  used on input line 288. on input line 2
+88.
+Package pdftex.def Info: Requested size: 418.23274pt x 591.50883pt on input lin
+e 288.
+<fig5teste.pdf, id=53, pagebox=cropbox, 597.47943pt x 845.01837pt>
+File: fig5teste.pdf Graphic file (type pdf)
+<use fig5teste.pdf>
+Package pdftex.def Info: fig5teste.pdf  used on input line 294. on input line 2
+94.
+Package pdftex.def Info: Requested size: 418.23274pt x 591.50883pt on input lin
+e 294.
+ [9 <./fig4teste.pdf>]
+Overfull \vbox (5.07883pt too high) has occurred while \output is active []
+
+
+[10 <./fig5teste.pdf>]
+<fig6teste.pdf, id=68, pagebox=cropbox, 597.47943pt x 845.01837pt>
+File: fig6teste.pdf Graphic file (type pdf)
+<use fig6teste.pdf>
+Package pdftex.def Info: fig6teste.pdf  used on input line 300. on input line 3
+00.
+Package pdftex.def Info: Requested size: 418.23274pt x 591.50883pt on input lin
+e 300.
+
+Overfull \vbox (5.07883pt too high) has occurred while \output is active []
+
+
+[11 <./fig6teste.pdf>]
+<fig7teste.pdf, id=76, pagebox=cropbox, 597.47943pt x 845.01837pt>
+File: fig7teste.pdf Graphic file (type pdf)
+<use fig7teste.pdf>
+Package pdftex.def Info: fig7teste.pdf  used on input line 307. on input line 3
+07.
+Package pdftex.def Info: Requested size: 388.35703pt x 549.25543pt on input lin
+e 307.
+<fig8teste.pdf, id=77, pagebox=cropbox, 597.47943pt x 845.01837pt>
+File: fig8teste.pdf Graphic file (type pdf)
+<use fig8teste.pdf>
+Package pdftex.def Info: fig8teste.pdf  used on input line 313. on input line 3
+13.
+Package pdftex.def Info: Requested size: 388.35703pt x 549.25543pt on input lin
+e 313.
+ [12 <./fig7teste.pdf>]
+<fig9teste.pdf, id=86, pagebox=cropbox, 597.47943pt x 845.01837pt>
+File: fig9teste.pdf Graphic file (type pdf)
+<use fig9teste.pdf>
+Package pdftex.def Info: fig9teste.pdf  used on input line 319. on input line 3
+19.
+Package pdftex.def Info: Requested size: 418.23274pt x 591.50883pt on input lin
+e 319.
+ [13 <./fig8teste.pdf>]
+Overfull \vbox (5.07883pt too high) has occurred while \output is active []
+
+
+[14 <./fig9teste.pdf>] (./relatorio.aux) ) 
 Here is how much of TeX's memory you used:
- 4814 strings out of 492990
- 66358 string characters out of 6138688
- 240382 words of memory out of 5000000
- 8253 multiletter control sequences out of 15000+600000
+ 4862 strings out of 492990
+ 67371 string characters out of 6138688
+ 241382 words of memory out of 5000000
+ 8292 multiletter control sequences out of 15000+600000
  29647 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,38p,858b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr
-/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/s
-hare/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/t
-ype1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.
-pfb>
-Output written on relatorio.pdf (5 pages, 84618 bytes).
+ 41i,10n,39p,858b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvip
+s/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/symb
+ol/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share
+/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1
+/urw/times/utmri8a.pfb>
+Output written on relatorio.pdf (15 pages, 480752 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
- 37 compressed objects within 1 object stream
+ 129 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

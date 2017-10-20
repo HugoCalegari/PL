@@ -1,5 +1,4 @@
 function [xot, fot, h] = funcsimplex(m,n,A,b,c)
-    
     %Parte de inicialização
     x = zeros(length(c),1); %A solução x é iniciada como um vetor coluna de zeros
     

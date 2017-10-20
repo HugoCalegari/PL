@@ -134,7 +134,34 @@ Na forma padrão, tem-se que:
 de tal forma que os custos são reajustados, ou seja, na forma padrão tem-se que os custos relacionados com as variáveis de folga são nulos.
 \newline
 
-Para executar o algoritmo, deve-se verificar o local onde se salvou a função (o diretório onde encontrá-la). Com o Matlab ou Octave aberto digitar, por exemplo (sem as aspas duplas): ``cd 'Área de trabalho/''' ou ``cd Downloads/''. Com isso, o Matlab ou Octave já identifica os conteúdos do diretório, inclusive o arquivo relacionado com a função elaborada em extensão ``.m'' (\underline{funcsimplex.m}).
+Para executar o algoritmo, deve-se verificar o local onde se salvou a função (o diretório onde encontrá-la). Em Matlab, pode-se seguir os seguintes passos:
+\newline
+
+1) Abra o Matlab como na figura figura 1 nos Anexos;
+\newline
+
+2) Ao lado direito de ``Current Folder'' existe uma caixa com três pontos semelhante a reticências (vide figura 2 em Anexos). Ao clicar nesta, selecione o local onde foi salvo o arquivo ``funcsimplex.m'' (Por exemplo, vide figura 3 em Anexos no qual foi selecionado a área de trabalho, local onde a função do método simplex  (``funcsimplex.m'') foi salva).
+\newline
+
+3) Note que ao selecionar o local (diretório) onde está o arquivo da função, ao lado esquerdo da linha de comando exibirá todos documentos encontrados na pasta (vide figura 4 em Anexos).
+\newline
+
+4) Depois da localização em (2) e identificação da função em (3) basta clicar duas vezes na função ``funcsimplex.m'' para visualizar o código comentado (vide figura 5 em Anexos).
+\newline
+
+5) Para inicializar a matriz, os vetores e o número de linhas e colunas como entrada, basta digitá-los como nos exemplos dados (vide, como exemplo, a figura 6 em Anexos). Além disso, observe ao lado direito (no ``Workspace'') da linha de comando que as matrizes foram inicializadas com os valores fornecidos pelo usuário (vide figura 6).
+\newline
+
+6) Para verificar a solução ótima e a função objetivo mínima associada, basta utilizar uma linha de comando como mostrado na figura 7 em Anexos. Caso queira ver a quantidade de iterações utilizadas para se obter a solução ótima basta adicionar simplesmente um argumento na saída, como na figura 8 em Anexos.
+\newline
+
+7) Para inicializar outra matriz, primeiramente digite na linha de comando ``clear'', para que os valores das variáveis anteriores não sejam reutilizados (vide figura 9). Observe que o ``Workspace'' visto em (5), agora está vazio, assim como quando aberto o Matlab.
+\newline
+
+8) Basta digitar as novas entradas e chamar novamente a função para observar a solução ótima. 
+\newline
+
+Caso queira executar com o Octave: com o Octave aberto digitar, por exemplo (sem as aspas duplas): ``cd 'Área de trabalho/''' ou ``cd Downloads/'', ou qual seja o diretório no qual se salvou a função ``funcsimplex.m'' para identificar o local onde ela está  Com isso, o Octave já reconhece os conteúdos do diretório. Agora, basta seguir os mesmos passos de inicialização feitos no Matlab e executar a função da mesma maneira.
 \newline
 
 Como \textbf{entrada}, o usuário fornece o número de linhas e colunas (m e n, respectivamente) da Matriz A na forma \textbf{padronizada} (folgas incluídas), fornece a própria matriz A com as variáveis de \textbf{folga incluídas}, fornece os vetores \textbf{transpostos} b e c relacionados com as restrições e os custos (com os custos nulos das variáveis de folga), respectivamente. Veja a seguir alguns exemplos de como fazer para inicializar as variáveis mencionadas.
@@ -235,5 +262,63 @@ Problema ilimitado!
 \newline
 
 xot = [](0x0), fot = - $\infty$, ou seja, não existe um único xot e, assim, um único fot. Ao encontrar um valor de xot tal que fot é mínimo é possível determinar outro par de xot$^{*}$ e fot$^{*}$ que seja menor que o anterior encontrado. Com isso, o problema é ilimitado.
+
+\section{Anexos}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{fig1teste.pdf}
+    \caption{Abrir o Matlab.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.65]{fig2teste2.pdf}
+    \caption{Caixa com três pontos semelhante a reticências ao lado direito de ``Current folder''. Clique nela e selecione o local onde foi salvo o arquivo ``funcsimplex.m''.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.7]{fig3teste.pdf}
+    \caption{Seleção do local onde foi salvo a função do algoritmo primal simplex, definida como ``funcsimplex.m''. Na figura a área de trabalho foi o local onde se salvou a função.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.7]{fig4teste.pdf}
+    \caption{Observe que ao lado esquerdo da linha de comando estão listados todos os documentos encontrados na pasta.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.7]{fig5teste.pdf}
+    \caption{Ao clicar duas vezes em ``funcsimplex.m'' o algoritmo do método primal simplex será exibido com todos os comentários feitos.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.7]{fig6teste.pdf}
+    \caption{Ao digitar a matriz A, os vetores b e c, o número de linhas (m) e colunas (n), note o lado direito da linha de comando (``Workspace''). Neste local estarão todas as variáveis inicializadas.}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.65]{fig7teste.pdf}
+    \caption{Para verificar a solução ótima e a função objetivo mínima associada basta digitar uma linha de comando como a figura mostra.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.65]{fig8teste.pdf}
+    \caption{Para verificar a solução ótima, a função objetivo mínima associada e o número de iterações realizadas basta digitar uma linha de comando como a figura mostra.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.7]{fig9teste.pdf}
+    \caption{Comando ``clear'' para apagar as variáveis que foram utilizadas. Observe que no ``Workspace'' não há nenhuma variável. Caso queira inicializar outros valores de variáveis basta o usuário fornecer os novos valores.}
+\end{figure}
+
 
 \end{document}
