@@ -62,10 +62,10 @@ Leonardo Uchoa Pedreira RA:156231\break
 \section{Comentários sobre o código (funcsimplex) para o algoritmo do método primal simplex}
 \newline
 
-Utiliza como entrada as seguintes variáveis: m, n, A, b e c que são, respectivamente, o número de linhas da matriz A, colunas de A, a matriz A com as variáveis de folga incluídas, o vetor de variáveis livres e o vetor de custos. (b e c devem ser inicializadas como vetores coluna, portanto devem ser transpostos.) A saída pode ser exibida de duas maneiras semelhantes: a primeira é com a saída do valor ótimo de x (xot) com a função objetivo mínima (fot); a segunda é com o valor ótimo de x (xot) com a função objetivo mínima (fot) e o número máximo de iterações (h) realizadas para se chegar no resultado encontrado. Observe que o valor associado ao número de iterações (h) está relacionado com a última iteração cujos custos relativos são maiores ou iguais a zero e consequentemente o algoritmo para.
+Utiliza como entrada as seguintes variáveis: m, n, A, b e c que são, respectivamente, o número de linhas da matriz A, colunas de A, a matriz A com as variáveis de folga incluídas, o vetor de variáveis livres e o vetor de custos (b e c devem ser inicializadas como vetores coluna, portanto devem ser transpostos.) A saída pode ser exibida de duas maneiras semelhantes: a primeira é com a saída do valor ótimo de x (xot) com a função objetivo mínima (fot); a segunda é com o valor ótimo de x (xot) com a função objetivo mínima (fot) e o número máximo de iterações (h) realizadas para se chegar no resultado encontrado. Observe que o valor associado ao número de iterações (h) está relacionado com a última iteração cujos custos relativos são maiores ou iguais a zero (condição de otimalidade) e consequentemente o algoritmo para.
 \newline
 
-No desenvolvimento da função encontra-se a inicialização de x com as entradas todas nulas, que posteriormente será preenchida com seus devidos valores para a partição básica e como a não básica é nula mantém-se estes valores. O vetor inicializado C simplesmente se concentra em identificar as colunas da matriz A que representam a matriz identidade. (Como o código foi feito ao se considerar o problema $Ax \le b$, basta considerar as últimas colunas de A com as variáveis de folga incluídas.)
+No desenvolvimento da função encontra-se a inicialização de x com as entradas todas nulas, que posteriormente será preenchida com seus devidos valores para a partição básica e como a não básica é nula mantém-se estes valores. O vetor inicializado C simplesmente se concentra em identificar as colunas da matriz A que representam a matriz identidade. (Como o código foi feito ao se considerar o problema $Ax \le b$, basta considerar as últimas colunas de A com as variáveis de folga incluídas. Mais informações de qual estrutura de programação linear a ser tratado, pode ser encontrado na próxima seção.)
 \newline
 
 O componente principal da função é um loop (``for''), no qual a cada iteração (atualização) é possível identificar:
@@ -86,10 +86,10 @@ O componente principal da função é um loop (``for''), no qual a cada iteraç�
 5) O vetor de custos relativos: ``cr = c' - lambda'*A'';
 \newline
 
-6) Identificação de custos relativos menores que zero: ``H = find(cr $<$ 0)'' e, com isso, por meio de uma estrutura condicional verifica-se se o vetor H é nulo ou não. Caso for nulo, ou seja, não há custos relativos menores que zero, então chegou-se na solução ótima; caso contrário continue;
+6) Identificação dos índices dos custos relativos menores que zero: ``H = find(cr $<$ 0)'' e, com isso, por meio de uma estrutura condicional verifica-se se o vetor H é nulo ou não. Caso for nulo, ou seja, não há custos relativos menores que zero, então chegou-se na solução ótima; caso contrário o algoritmo continua;
 \newline
 
-7) Dado 6, encontrado os custos relativos menores que zero, determina-se o índice de ``cr'' com o menor valor de custo relativo (regra de Dantzig) por: ``jsuporte = (find(min(cr(H)) == cr))'' e ``jentra = jsuporte(1)''; uma vez que pode-se ter mais do que um índice de ``cr'' com o mesmo custo relativo mínimo, a variável ``jentra'' foi criada com o objetivo de armaznar o primeiro índice com o custo mínimo repetido da variável ``jsuporte'';
+7) Dado 6, encontrado os índices dos custos relativos menores que zero, determina-se o índice de ``cr'' com o menor valor de custo relativo (regra de Dantzig) por: ``jsuporte = (find(min(cr(H)) == cr))'' e ``jentra = jsuporte(1)'' (variável que deverá fazer parte da base); uma vez que pode-se ter mais do que um índice de ``cr'' com o mesmo custo relativo mínimo, a variável ``jentra'' foi criada com o objetivo de armazenar o primeiro índice com o custo mínimo repetido da variável ``jsuporte'';
 \newline
 
 8) Cálculo da direção simplex pelo vetor: ``y = invB*A(:,jentra)''; 
@@ -101,7 +101,7 @@ O componente principal da função é um loop (``for''), no qual a cada iteraç�
 10) Caso não haja nenhuma direção que seja estritamente maior que zero, isso quer dizer que tem-se um problema ilimitado, identificada pela estrutura condicional: ``if (isempty(I))'';
 \newline
 
-11) Determinação do tamanho do passo por: ``epsilon = min(x(C(I))./y(I))'' e, posteriormente, identifiação do índice que sairá da base por: ``L = find(x(C)./y == epsilon)'';
+11) Determinação do tamanho do passo por: ``epsilon = min(x(C(I))./y(I))'' e, posteriormente, identifiação do índice que sairá da base por: ``L = find(x(C)./y == epsilon)''; (lembre-se de que em (7) já se sabe qal índice entrará na base.)
 \newline
 
 12) Adoção da estratégia simplex, com isso as variáveis básicas devem ser alteradas e calculadas como o seguinte vetor: ``x(C) = x(C) - epsilon*y'';
@@ -113,7 +113,7 @@ O componente principal da função é um loop (``for''), no qual a cada iteraç�
 14) A atualização dos índices que fazem parte da base é escrito como segue: ``C(lsai) = jentra'';
 \newline
 
-15) Por fim, existe uma estrutura condicional para verifical se o número de iterações máximo foi atingido ou não. Caso tenha atingido e não encontrado a solução ótima por este motivo, deve-se alterar o valor de ``maxit'' para o valor desejado. Observe que de início o valor determinado para ``maxit'' foi de $20$ iterações (valor designado de maneira arbitrária).
+15) Por fim, existe uma estrutura condicional para verifical se o número de iterações máximo foi atingido ou não. Caso tenha atingido e não encontrado a solução ótima por este motivo, deve-se alterar o valor de ``maxit'' para o valor desejado. Observe que de início o valor determinado para ``maxit'' foi de $50$ iterações (valor designado de maneira arbitrária).
 \newline
 \section{Como aplicar a função}
 
@@ -161,10 +161,10 @@ Para executar o algoritmo, deve-se verificar o local onde se salvou a função (
 8) Basta digitar as novas entradas e chamar novamente a função para observar a solução ótima. 
 \newline
 
-Caso queira executar com o Octave: com o Octave aberto digitar, por exemplo (sem as aspas duplas): ``cd 'Área de trabalho/''' ou ``cd Downloads/'', ou qual seja o diretório no qual se salvou a função ``funcsimplex.m'' para identificar o local onde ela está  Com isso, o Octave já reconhece os conteúdos do diretório. Agora, basta seguir os mesmos passos de inicialização feitos no Matlab e executar a função da mesma maneira.
+Caso queira executar com o Octave: com o Octave aberto digitar, por exemplo (sem as aspas duplas): ``cd 'Área de trabalho/''' ou ``cd Downloads/'', ou qual seja o diretório no qual se salvou a função ``funcsimplex.m'', para identificar o local onde ela está. Com isso, o Octave já reconhece os conteúdos do diretório. Agora, basta seguir os mesmos passos de inicialização feitos no Matlab e executar a função da mesma maneira.
 \newline
 
-Como \textbf{entrada}, o usuário fornece o número de linhas e colunas (m e n, respectivamente) da Matriz A na forma \textbf{padronizada} (folgas incluídas), fornece a própria matriz A com as variáveis de \textbf{folga incluídas}, fornece os vetores \textbf{transpostos} b e c relacionados com as restrições e os custos (com os custos nulos das variáveis de folga), respectivamente. Veja a seguir alguns exemplos de como fazer para inicializar as variáveis mencionadas.
+Como \textbf{entrada}, o usuário fornece a matriz A com as variáveis de \textbf{folga incluídas}, fornece os vetores \textbf{transpostos} b e c relacionados com as restrições e os custos (com os custos nulos das variáveis de folga), respectivamente e o número de linhas e colunas (m e n, respectivamente) da Matriz A na forma \textbf{padronizada} (folgas incluídas). Veja a seguir alguns exemplos de como fazer para inicializar as variáveis mencionadas.
 \newline
 
 1) O número de linhas e colunas da matriz A pode ser fornecida, por exemplo, como: ``m = 3; n = 5;''.
@@ -211,7 +211,7 @@ Para isso deve-se escrever os seguintes comandos (sem o sinal das aspas): ``b = 
 Uma vez inicializada as variáveis de interesse, a maneira de executar o algoritmo para se obter a solução ótima com a função objetivo associada a esta é como se segue:
 \newline
 
-[xot, fot] = funcsimplex(m,n,A, b, c) (caso se queira ver somente o resultado de x ótimo com o valor associado da função objetivo f) e outra forma de se chamar a função é: [xot, fot, h] = funcsimplex(m,n,A, b, c) (nesta maneira as saídas são: x ótimo que minimiza a função objetivo f e o valor de f em x ótimo, e o número de iterações necessárias/realizadas (identificado como h) para se obter a solução ótima).
+[xot, fot] = funcsimplex(m,n,A, b, c) (caso se queira ver somente o resultado de x ótimo com o valor associado da função objetivo f) e outra forma de se chamar a função é: [xot, fot, h] = funcsimplex(m,n,A, b, c) (nesta maneira as saídas são: x ótimo que minimiza a função objetivo f, o valor de f em x ótimo, e o número de iterações necessárias/realizadas (identificado como h) para se obter a solução ótima).
 \newline
 
 Observação: a parte da função [xot, fot] ou [xot, fot, h] estão relacionadas com as saídas da função e funcsimplex(m,n,A, b, c) está relacionada com as entradas da função; observe que o símbolo ' nos vetores b e c referem-se as transposições destes.
@@ -220,7 +220,7 @@ Exemplos:
 \newline
 
 1)
-m = 3; n = 6; A = [1 2 2 1 0 0; 2 1 2 0 1 0; 2 2 1 0 0 1]; b = [20 20 20]'; c = [-10 -12 -12 0 0 0]';. Lembre-se de que o símbolo ' nos vetores b e c referem-se as transposições destes. A resposta esperada ou solução ótima esperda é:
+A = [1 2 2 1 0 0; 2 1 2 0 1 0; 2 2 1 0 0 1]; b = [20 20 20]'; c = [-10 -12 -12 0 0 0]'; m = 3; n = 6. Lembre-se de que o símbolo ' nos vetores b e c referem-se as transposições destes. A resposta esperada ou solução ótima esperda é:
 \newline
 
 xot = [4 4 4 0 0 0]', fot = -136, ou seja, xot = [4 4 4 0 0 0]' com função objetivo: fot = -136.
@@ -231,7 +231,7 @@ Observação à respeito de x e a solução ótima xot. Lembre-se, neste caso, d
 Exemplos obtidos das listas de exercício.
 \newline
 
-2) m = 2; n = 4; A=[-1 1 1 0; 2 -1 0 1]; b = [2 6]'; c = [-1 -1 0 0]';. A resposta esperada ou solução ótima esperda é:
+2) A=[-1 1 1 0; 2 -1 0 1]; b = [2 6]'; c = [-1 -1 0 0]'; m = 2; n = 4. A resposta esperada ou solução ótima esperada é:
 \newline
 
 xot = [8 10 0 0]', fot = -18, ou seja, xot = [8 10 0 0]' com função objetivo: fot = -18.
@@ -239,29 +239,29 @@ xot = [8 10 0 0]', fot = -18, ou seja, xot = [8 10 0 0]' com função objetivo: 
 Observação à respeito de x e a solução ótima xot. Neste caso, x = [$x_1$ $x_2$ $x_3$ $x_4$]', ou seja, a parte [$x_1$ $x_2$]' do vetor coluna x são as variáveis do problema e a parte [$x_3$ $x_4$]' do vetor x são as variáveis de folga. Com isso, a solução ótima encontrada para este exemplo representa: $x_1$ = 8, $x_2$ = 10, $x_3$ = $x_4$ = 0 (variáveis de folga nulas caracterizam restrições ativas);
 \newline
 
-3) m = 3; n = 5; A = [1 1 1 0 0; 1 0 0 1 0; 0 1 0 0 1]; b = [4 3 7/2]'; c = [-2 -1 0 0 0]';. A resposta esperada ou solução ótima esperda é:
+3) A = [1 1 1 0 0; 1 0 0 1 0; 0 1 0 0 1]; b = [4 3 7/2]'; c = [-2 -1 0 0 0]'; m = 3; n = 5. A resposta esperada ou solução ótima esperada é:
 \newline
 
-xot = [3 1 0 0 2.5]', fot = -7, ou seja, xot = [3.0 1.0 0.0 0.0 2.5]' com função objetivo: fot = -7.
+xot = [3 1 0 0 2.5]', fot = -7, ou seja, xot = [3 1 0 0 2.5]' com função objetivo: fot = -7.
 \newline
 Observação à respeito de x e a solução ótima xot. Lembre-se, neste caso, de que x = [$x_1$ $x_2$ $x_3$ $x_4$ $x_5$]', ou seja, a parte [$x_1$ $x_2$]' do vetor coluna x são as variáveis do problema e a parte [$x_3$ $x_4$ $x_5$]' do vetor x são as variáveis de folga. Com isso, a solução ótima encontrada para este exemplo representa: $x_1$ = 3, $x_2$ = 1, $x_3$ = $x_4$ = 0 e $x_5$ = 2.5 (neste caso somente duas restrições foram ativadas);
 \newline
 
-4) m = 2; n = 6; A = [1 1 -1 0 1 0; -1 1 0 -1 0 1]; b = [2 1]'; c = [0 0 0 0 1 1]';. A resposta esperada ou solução ótima esperda é:
+4) A = [1 1 -1 0 1 0; -1 1 0 -1 0 1]; b = [2 1]'; c = [0 0 0 0 1 1]'; m = 2; n = 6. A resposta esperada ou solução ótima esperada é:
 \newline
 
-xot = [0.5 1.5 0 0 0 0]', fot = 0, ou seja, xot = [0.5 1.5 0.0 0.0 0.0 0.0]' com função objetivo: fot = 0.
+xot = [0.5 1.5 0 0 0 0]', fot = 0, ou seja, xot = [0.5 1.5 0 0 0 0]' com função objetivo: fot = 0.
 \newline
 Observação à respeito de x e a solução ótima xot. Lembre-se, neste caso, de que x = [$x_1$ $x_2$ $x_3$ $x_4$ $x_5$ $x_6$]', ou seja, a parte [$x_1$ $x_2$ $x_3$ $x_4$]' do vetor coluna x são as variáveis do problema e a parte [$x_5$ $x_6$]' do vetor x são as variáveis de folga. Com isso, a solução ótima encontrada para este exemplo representa: $x_1$ = 0.5, $x_2$ = 1.5, $x_3$ = $x_4$ = $x_5$ = $x_6$ = 0 (variáveis de folga nulas caracterizam restrições ativas);
 \newline
 
-5)Exemplo de problema ilimitado: m = 2; n = 4; A = [-1 -1 1 0; -3 -5 0 1]; b = [8 30]'; c = [-4 -5 0 0]';. A resposta esperada ou solução ótima esperda é:
+5)Exemplo de problema ilimitado: A = [-1 -1 1 0; -3 -5 0 1]; b = [8 30]'; c = [-4 -5 0 0]'; m = 2; n = 4. A resposta esperada ou solução ótima esperada é:
 \newline
 
 Problema ilimitado!
 \newline
 
-xot = [](0x0), fot = - $\infty$, ou seja, não existe um único xot e, assim, um único fot. Ao encontrar um valor de xot tal que fot é mínimo é possível determinar outro par de xot$^{*}$ e fot$^{*}$ que seja menor que o anterior encontrado. Com isso, o problema é ilimitado.
+xot = [], fot = - $\infty$, ou seja, não existe um único xot e, assim, um único fot. Ao encontrar um valor de xot tal que fot é mínimo é possível determinar outro par de xot$^{*}$ e fot$^{*}$ que seja menor que o anterior encontrado. Com isso, o problema é ilimitado.
 
 \section{Anexos}
 
@@ -273,8 +273,8 @@ xot = [](0x0), fot = - $\infty$, ou seja, não existe um único xot e, assim, um
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale = 0.65]{fig2teste2.pdf}
-    \caption{Caixa com três pontos semelhante a reticências ao lado direito de ``Current folder''. Clique nela e selecione o local onde foi salvo o arquivo ``funcsimplex.m''.}
+    \includegraphics[scale = 0.65]{fig1teste11.pdf}
+    \caption{Caixa com três pontos semelhante a reticências ao lado direito de ``Current folder''. Observe que as setas azuis acima, indicam o local mencionado. Clique nas reticências e selecione o local onde foi salvo o arquivo ``funcsimplex.m''.}
 \end{figure}
 
 \begin{figure}[H]

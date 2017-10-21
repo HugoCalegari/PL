@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.8.10)  20 OCT 2017 12:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.8.10)  20 OCT 2017 22:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -762,12 +762,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--106
 
  []
 
-
+[1]
 Underfull \hbox (badness 10000) in paragraph at lines 107--109
 
  []
 
-[1]
+
 Underfull \hbox (badness 10000) in paragraph at lines 110--112
 
  []
@@ -817,12 +817,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--154
 
  []
 
-
+[2]
 Underfull \hbox (badness 10000) in paragraph at lines 155--157
 
  []
 
-[2]
+
 Underfull \hbox (badness 10000) in paragraph at lines 158--160
 
  []
@@ -867,12 +867,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 211--213
 
  []
 
-
+[3]
 Underfull \hbox (badness 10000) in paragraph at lines 214--216
 
  []
 
-[3]
+
 Underfull \hbox (badness 10000) in paragraph at lines 219--221
 
  []
@@ -927,12 +927,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 258--260
 
  []
 
-
+[4]
 Underfull \hbox (badness 10000) in paragraph at lines 261--263
 
  []
 
-[4]
 <fig1teste.pdf, id=25, pagebox=cropbox, 597.23125pt x 845.1575pt>
 File: fig1teste.pdf Graphic file (type pdf)
 <use fig1teste.pdf>
@@ -940,16 +939,16 @@ Package pdftex.def Info: fig1teste.pdf  used on input line 270. on input line 2
 70.
 Package pdftex.def Info: Requested size: 418.05902pt x 591.60622pt on input lin
 e 270.
- [5]
+[5]
 Overfull \vbox (24.7277pt too high) has occurred while \output is active []
 
 
 [6 <./fig1teste.pdf>]
-<fig2teste2.pdf, id=37, pagebox=cropbox, 597.23125pt x 845.1575pt>
-File: fig2teste2.pdf Graphic file (type pdf)
-<use fig2teste2.pdf>
-Package pdftex.def Info: fig2teste2.pdf  used on input line 276. on input line 
-276.
+<fig1teste11.pdf, id=37, pagebox=cropbox, 597.23125pt x 845.1575pt>
+File: fig1teste11.pdf Graphic file (type pdf)
+<use fig1teste11.pdf>
+Package pdftex.def Info: fig1teste11.pdf  used on input line 276. on input line
+ 276.
 Package pdftex.def Info: Requested size: 388.19571pt x 549.34587pt on input lin
 e 276.
 <fig3teste.pdf, id=38, pagebox=cropbox, 597.47943pt x 845.01837pt>
@@ -959,19 +958,19 @@ Package pdftex.def Info: fig3teste.pdf  used on input line 282. on input line 2
 82.
 Package pdftex.def Info: Requested size: 418.23274pt x 591.50883pt on input lin
 e 282.
- [7 <./fig2teste2.pdf>]
+ [7 <./fig1teste11.pdf>]
 Overfull \vbox (5.07883pt too high) has occurred while \output is active []
 
 
 [8 <./fig3teste.pdf>]
-<fig4teste.pdf, id=52, pagebox=cropbox, 597.47943pt x 845.01837pt>
+<fig4teste.pdf, id=55, pagebox=cropbox, 597.47943pt x 845.01837pt>
 File: fig4teste.pdf Graphic file (type pdf)
 <use fig4teste.pdf>
 Package pdftex.def Info: fig4teste.pdf  used on input line 288. on input line 2
 88.
 Package pdftex.def Info: Requested size: 418.23274pt x 591.50883pt on input lin
 e 288.
-<fig5teste.pdf, id=53, pagebox=cropbox, 597.47943pt x 845.01837pt>
+<fig5teste.pdf, id=56, pagebox=cropbox, 597.47943pt x 845.01837pt>
 File: fig5teste.pdf Graphic file (type pdf)
 <use fig5teste.pdf>
 Package pdftex.def Info: fig5teste.pdf  used on input line 294. on input line 2
@@ -983,7 +982,7 @@ Overfull \vbox (5.07883pt too high) has occurred while \output is active []
 
 
 [10 <./fig5teste.pdf>]
-<fig6teste.pdf, id=68, pagebox=cropbox, 597.47943pt x 845.01837pt>
+<fig6teste.pdf, id=71, pagebox=cropbox, 597.47943pt x 845.01837pt>
 File: fig6teste.pdf Graphic file (type pdf)
 <use fig6teste.pdf>
 Package pdftex.def Info: fig6teste.pdf  used on input line 300. on input line 3
@@ -995,14 +994,14 @@ Overfull \vbox (5.07883pt too high) has occurred while \output is active []
 
 
 [11 <./fig6teste.pdf>]
-<fig7teste.pdf, id=76, pagebox=cropbox, 597.47943pt x 845.01837pt>
+<fig7teste.pdf, id=79, pagebox=cropbox, 597.47943pt x 845.01837pt>
 File: fig7teste.pdf Graphic file (type pdf)
 <use fig7teste.pdf>
 Package pdftex.def Info: fig7teste.pdf  used on input line 307. on input line 3
 07.
 Package pdftex.def Info: Requested size: 388.35703pt x 549.25543pt on input lin
 e 307.
-<fig8teste.pdf, id=77, pagebox=cropbox, 597.47943pt x 845.01837pt>
+<fig8teste.pdf, id=80, pagebox=cropbox, 597.47943pt x 845.01837pt>
 File: fig8teste.pdf Graphic file (type pdf)
 <use fig8teste.pdf>
 Package pdftex.def Info: fig8teste.pdf  used on input line 313. on input line 3
@@ -1010,7 +1009,7 @@ Package pdftex.def Info: fig8teste.pdf  used on input line 313. on input line 3
 Package pdftex.def Info: Requested size: 388.35703pt x 549.25543pt on input lin
 e 313.
  [12 <./fig7teste.pdf>]
-<fig9teste.pdf, id=86, pagebox=cropbox, 597.47943pt x 845.01837pt>
+<fig9teste.pdf, id=89, pagebox=cropbox, 597.47943pt x 845.01837pt>
 File: fig9teste.pdf Graphic file (type pdf)
 <use fig9teste.pdf>
 Package pdftex.def Info: fig9teste.pdf  used on input line 319. on input line 3
@@ -1024,12 +1023,12 @@ Overfull \vbox (5.07883pt too high) has occurred while \output is active []
 [14 <./fig9teste.pdf>] (./relatorio.aux) ) 
 Here is how much of TeX's memory you used:
  4862 strings out of 492990
- 67371 string characters out of 6138688
+ 67376 string characters out of 6138688
  241382 words of memory out of 5000000
  8292 multiletter control sequences out of 15000+600000
  29647 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,39p,858b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,10n,39p,885b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvip
 s/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/te
@@ -1038,10 +1037,10 @@ type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/symb
 ol/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share
 /texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1
 /urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (15 pages, 480752 bytes).
+Output written on relatorio.pdf (15 pages, 1240820 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
+ 132 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

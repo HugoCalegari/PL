@@ -7,7 +7,7 @@ function [xot, fot, h] = funcsimplex(m,n,A,b,c)
     C = ((n-m+1):n);
 
     %Parte da iteração
-    maxit = 20;        %Realiza-se no máximo 20 iterações; caso seja necessário muda-se para outro valor plausível
+    maxit = 50;        %Realiza-se no máximo 20 iterações; caso seja necessário muda-se para outro valor plausível
     for h = 1:maxit    %Loop principal
 
         % Cria-se a partição básica inicial e calcula a solução básica inicial pela sua inversa.
@@ -72,5 +72,5 @@ function [xot, fot, h] = funcsimplex(m,n,A,b,c)
             fprintf('Número máximo de iterações executado\n\n');
             return
         end
-    end  %Fim do loop principal
-end  %Fim da função
+    end
+end
