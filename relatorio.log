@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.8.10)  20 OCT 2017 22:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.8.10)  23 OCT 2017 10:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -655,6 +655,44 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 64
+.
+
+(/usr/share/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 64
+.
+
+(/usr/share/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 64
+.
+
+(/usr/share/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 64
+.
+
+(/usr/share/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 64.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 64.
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--83
+
+ []
+
 
 ! LaTeX Error: There's no line here to end.
 
@@ -662,385 +700,368 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.63 \newline
+l.88 \newline
              
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--67
-
- []
-
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 68
-.
-(/usr/share/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
-File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 68
-.
-
-(/usr/share/texmf-dist/tex/latex/psnfss/omlztmcm.fd
-File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 68
-.
-
-(/usr/share/texmf-dist/tex/latex/psnfss/omsztmcm.fd
-File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 68
-.
-
-(/usr/share/texmf-dist/tex/latex/psnfss/omxztmcm.fd
-File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 68.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 68.
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--70
+Underfull \hbox (badness 10000) in paragraph at lines 90--92
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--73
+Underfull \hbox (badness 10000) in paragraph at lines 93--95
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--76
+Underfull \hbox (badness 10000) in paragraph at lines 96--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--79
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--82
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 83--85
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 86--88
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 89--91
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--94
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--97
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 98--100
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 101--103
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 104--106
+Underfull \hbox (badness 10000) in paragraph at lines 99--101
 
  []
 
 [1]
-Underfull \hbox (badness 10000) in paragraph at lines 107--109
+Underfull \hbox (badness 10000) in paragraph at lines 102--104
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--112
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--115
+Underfull \hbox (badness 10000) in paragraph at lines 108--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--118
+Underfull \hbox (badness 10000) in paragraph at lines 111--113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--136
+Underfull \hbox (badness 10000) in paragraph at lines 114--116
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--139
+Underfull \hbox (badness 10000) in paragraph at lines 117--119
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 140--142
+Underfull \hbox (badness 10000) in paragraph at lines 120--122
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--145
+Underfull \hbox (badness 10000) in paragraph at lines 123--125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--148
+Underfull \hbox (badness 10000) in paragraph at lines 126--128
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--151
+Underfull \hbox (badness 10000) in paragraph at lines 129--131
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--154
+Underfull \hbox (badness 10000) in paragraph at lines 132--134
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--143
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--146
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--149
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 155--157
+Underfull \hbox (badness 10000) in paragraph at lines 150--152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--160
+Underfull \hbox (badness 10000) in paragraph at lines 153--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--163
+Underfull \hbox (badness 10000) in paragraph at lines 156--158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--166
+Underfull \hbox (badness 10000) in paragraph at lines 159--161
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--169
+Underfull \hbox (badness 10000) in paragraph at lines 162--164
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--172
+Underfull \hbox (badness 10000) in paragraph at lines 165--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--183
+Underfull \hbox (badness 10000) in paragraph at lines 168--170
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--186
+Underfull \hbox (badness 10000) in paragraph at lines 171--173
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--210
+Underfull \hbox (badness 10000) in paragraph at lines 174--176
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--213
+Underfull \hbox (badness 10000) in paragraph at lines 177--179
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--182
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--196
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 214--216
+Underfull \hbox (badness 10000) in paragraph at lines 218--220
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--221
+Underfull \hbox (badness 10000) in paragraph at lines 221--223
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 222--225
+Underfull \hbox (badness 10000) in paragraph at lines 224--226
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--230
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--233
+Underfull \hbox (badness 10000) in paragraph at lines 232--235
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--236
+Underfull \hbox (badness 10000) in paragraph at lines 236--240
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--241
+Underfull \hbox (badness 10000) in paragraph at lines 241--243
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--244
+Underfull \hbox (badness 10000) in paragraph at lines 244--246
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--249
+Underfull \hbox (badness 10000) in paragraph at lines 247--251
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--252
+Underfull \hbox (badness 10000) in paragraph at lines 252--254
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--257
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 258--260
+Underfull \hbox (badness 10000) in paragraph at lines 255--259
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 261--263
+Underfull \hbox (badness 10000) in paragraph at lines 260--262
 
  []
 
-<fig1teste.pdf, id=25, pagebox=cropbox, 597.23125pt x 845.1575pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--267
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--270
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--273
+
+ []
+
+<fig1teste.pdf, id=26, pagebox=cropbox, 597.23125pt x 845.1575pt>
 File: fig1teste.pdf Graphic file (type pdf)
 <use fig1teste.pdf>
-Package pdftex.def Info: fig1teste.pdf  used on input line 270. on input line 2
-70.
+Package pdftex.def Info: fig1teste.pdf  used on input line 280. on input line 2
+80.
 Package pdftex.def Info: Requested size: 418.05902pt x 591.60622pt on input lin
-e 270.
+e 280.
 [5]
 Overfull \vbox (24.7277pt too high) has occurred while \output is active []
 
 
 [6 <./fig1teste.pdf>]
-<fig1teste11.pdf, id=37, pagebox=cropbox, 597.23125pt x 845.1575pt>
+<fig1teste11.pdf, id=38, pagebox=cropbox, 597.23125pt x 845.1575pt>
 File: fig1teste11.pdf Graphic file (type pdf)
 <use fig1teste11.pdf>
-Package pdftex.def Info: fig1teste11.pdf  used on input line 276. on input line
- 276.
+Package pdftex.def Info: fig1teste11.pdf  used on input line 286. on input line
+ 286.
 Package pdftex.def Info: Requested size: 388.19571pt x 549.34587pt on input lin
-e 276.
-<fig3teste.pdf, id=38, pagebox=cropbox, 597.47943pt x 845.01837pt>
+e 286.
+<fig3teste.pdf, id=39, pagebox=cropbox, 597.47943pt x 845.01837pt>
 File: fig3teste.pdf Graphic file (type pdf)
 <use fig3teste.pdf>
-Package pdftex.def Info: fig3teste.pdf  used on input line 282. on input line 2
-82.
+Package pdftex.def Info: fig3teste.pdf  used on input line 292. on input line 2
+92.
 Package pdftex.def Info: Requested size: 418.23274pt x 591.50883pt on input lin
-e 282.
+e 292.
  [7 <./fig1teste11.pdf>]
 Overfull \vbox (5.07883pt too high) has occurred while \output is active []
 
 
 [8 <./fig3teste.pdf>]
-<fig4teste.pdf, id=55, pagebox=cropbox, 597.47943pt x 845.01837pt>
+<fig4teste.pdf, id=56, pagebox=cropbox, 597.47943pt x 845.01837pt>
 File: fig4teste.pdf Graphic file (type pdf)
 <use fig4teste.pdf>
-Package pdftex.def Info: fig4teste.pdf  used on input line 288. on input line 2
-88.
+Package pdftex.def Info: fig4teste.pdf  used on input line 298. on input line 2
+98.
 Package pdftex.def Info: Requested size: 418.23274pt x 591.50883pt on input lin
-e 288.
-<fig5teste.pdf, id=56, pagebox=cropbox, 597.47943pt x 845.01837pt>
+e 298.
+<fig5teste.pdf, id=57, pagebox=cropbox, 597.47943pt x 845.01837pt>
 File: fig5teste.pdf Graphic file (type pdf)
 <use fig5teste.pdf>
-Package pdftex.def Info: fig5teste.pdf  used on input line 294. on input line 2
-94.
+Package pdftex.def Info: fig5teste.pdf  used on input line 304. on input line 3
+04.
 Package pdftex.def Info: Requested size: 418.23274pt x 591.50883pt on input lin
-e 294.
+e 304.
  [9 <./fig4teste.pdf>]
 Overfull \vbox (5.07883pt too high) has occurred while \output is active []
 
 
 [10 <./fig5teste.pdf>]
-<fig6teste.pdf, id=71, pagebox=cropbox, 597.47943pt x 845.01837pt>
+<fig6teste.pdf, id=72, pagebox=cropbox, 597.47943pt x 845.01837pt>
 File: fig6teste.pdf Graphic file (type pdf)
 <use fig6teste.pdf>
-Package pdftex.def Info: fig6teste.pdf  used on input line 300. on input line 3
-00.
+Package pdftex.def Info: fig6teste.pdf  used on input line 310. on input line 3
+10.
 Package pdftex.def Info: Requested size: 418.23274pt x 591.50883pt on input lin
-e 300.
+e 310.
 
 Overfull \vbox (5.07883pt too high) has occurred while \output is active []
 
 
 [11 <./fig6teste.pdf>]
-<fig7teste.pdf, id=79, pagebox=cropbox, 597.47943pt x 845.01837pt>
+<fig7teste.pdf, id=80, pagebox=cropbox, 597.47943pt x 845.01837pt>
 File: fig7teste.pdf Graphic file (type pdf)
 <use fig7teste.pdf>
-Package pdftex.def Info: fig7teste.pdf  used on input line 307. on input line 3
-07.
+Package pdftex.def Info: fig7teste.pdf  used on input line 317. on input line 3
+17.
 Package pdftex.def Info: Requested size: 388.35703pt x 549.25543pt on input lin
-e 307.
-<fig8teste.pdf, id=80, pagebox=cropbox, 597.47943pt x 845.01837pt>
+e 317.
+<fig8teste.pdf, id=81, pagebox=cropbox, 597.47943pt x 845.01837pt>
 File: fig8teste.pdf Graphic file (type pdf)
 <use fig8teste.pdf>
-Package pdftex.def Info: fig8teste.pdf  used on input line 313. on input line 3
-13.
+Package pdftex.def Info: fig8teste.pdf  used on input line 323. on input line 3
+23.
 Package pdftex.def Info: Requested size: 388.35703pt x 549.25543pt on input lin
-e 313.
+e 323.
  [12 <./fig7teste.pdf>]
-<fig9teste.pdf, id=89, pagebox=cropbox, 597.47943pt x 845.01837pt>
+<fig9teste.pdf, id=90, pagebox=cropbox, 597.47943pt x 845.01837pt>
 File: fig9teste.pdf Graphic file (type pdf)
 <use fig9teste.pdf>
-Package pdftex.def Info: fig9teste.pdf  used on input line 319. on input line 3
-19.
+Package pdftex.def Info: fig9teste.pdf  used on input line 329. on input line 3
+29.
 Package pdftex.def Info: Requested size: 418.23274pt x 591.50883pt on input lin
-e 319.
+e 329.
  [13 <./fig8teste.pdf>]
 Overfull \vbox (5.07883pt too high) has occurred while \output is active []
 
 
-[14 <./fig9teste.pdf>] (./relatorio.aux) ) 
+[14 <./fig9teste.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 334--336
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--339
+
+ []
+
+[15] (./relatorio.aux) ) 
 Here is how much of TeX's memory you used:
  4862 strings out of 492990
  67376 string characters out of 6138688
- 241382 words of memory out of 5000000
+ 240382 words of memory out of 5000000
  8292 multiletter control sequences out of 15000+600000
  29647 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,39p,885b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvip
-s/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/symb
-ol/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share
-/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1
-/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (15 pages, 1240820 bytes).
+ 41i,10n,39p,896b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
+r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb></usr/share/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/tex
+mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw
+/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on relatorio.pdf (16 pages, 1246804 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 139 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

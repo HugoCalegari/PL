@@ -59,25 +59,50 @@ Leonardo Uchoa Pedreira RA:156231\break
 \end{center}
 \end{titlepage}
 
-\section{Comentários sobre o código (funcsimplex) para o algoritmo do método primal simplex}
+\section{Em qual tipo de problema de programação linear pode ser aplicado o algoritmo primal simplex desenvolvido ?}
+
+Seja A uma matriz de $\mathbb{R}^{m x n}$, c$^t$ o vetor de custos de dimensão $\mathbb{R}^{1 x n}$, x o vetor das variáveis de interesse com dimensão $\mathbb{R}^{n x 1}$, b o vetor de variáveis livres com dimensão $\mathbb{R}^{m x 1}$.
 \newline
 
-Utiliza como entrada as seguintes variáveis: m, n, A, b e c que são, respectivamente, o número de linhas da matriz A, colunas de A, a matriz A com as variáveis de folga incluídas, o vetor de variáveis livres e o vetor de custos (b e c devem ser inicializadas como vetores coluna, portanto devem ser transpostos.) A saída pode ser exibida de duas maneiras semelhantes: a primeira é com a saída do valor ótimo de x (xot) com a função objetivo mínima (fot); a segunda é com o valor ótimo de x (xot) com a função objetivo mínima (fot) e o número máximo de iterações (h) realizadas para se chegar no resultado encontrado. Observe que o valor associado ao número de iterações (h) está relacionado com a última iteração cujos custos relativos são maiores ou iguais a zero (condição de otimalidade) e consequentemente o algoritmo para.
+A função do algoritmo primal simplex, para determinar a solução ótima ou identificar uma solução ilimitada, foi definida como ``funcsimplex.m''. Esta função construída lida com problemas de programação linear da forma:
+
+\begin{align*}
+&\text{minimizar}& f(x) = c^{t}x\\  
+&\text{sujeito a:}& Ax \le b, x \ge 0.\\
+\end{align*}  
+
+Assim, para colocar o problema na forma padrão, adiciona-se as variáveis de folga nas restrições e redefine-se a função objetivo por meio dos custos. Com isso a representação do problema é escrito como segue:
+
+\begin{align*}
+&\text{minimizar}& f(x) = c^{t}x + 0^{t}s\\  
+&\text{sujeito a:}& Ax + s = b, x \ge 0, s \ge 0.\\
+\end{align*}  
+
+Naturalmente, a partição básica definida A = [B N] (com B uma matriz quadrada de dimensão $m x m$ e N uma matriz cuja dimensão é $m x (n-m)$), neste caso, pode ser escrita como A = [I N], ou seja, B $=$ I. Além disso, as variáveis de folga, definidas como $s$ começam como variáveis básicas.
 \newline
 
-No desenvolvimento da função encontra-se a inicialização de x com as entradas todas nulas, que posteriormente será preenchida com seus devidos valores para a partição básica e como a não básica é nula mantém-se estes valores. O vetor inicializado C simplesmente se concentra em identificar as colunas da matriz A que representam a matriz identidade. (Como o código foi feito ao se considerar o problema $Ax \le b$, basta considerar as últimas colunas de A com as variáveis de folga incluídas. Mais informações de qual estrutura de programação linear a ser tratado, pode ser encontrado na próxima seção.)
+A seguir será comentado toda a estruturação do algoritmo desenvolvido e posteriormente de que maneira aplicar o algoritmo a um problema de programação linear. (O código funcsimplex.m enviado em conjunto com o relatório também está comentado).
+
+
+\section{Comentários sobre o código (funcsimplex.m) para o algoritmo do método primal simplex}
+\newline
+
+Utiliza como entrada as seguintes variáveis: m, n, A, b e c que são, respectivamente, o número de linhas da matriz A, colunas de A, a matriz A com as variáveis de folga incluídas, o vetor de variáveis livres e o vetor de custos (b e c devem ser inicializadas como vetores coluna, portanto devem ser transpostos.) A saída pode ser exibida de duas maneiras: a primeira é com a saída do valor ótimo de x (xot) com a função objetivo mínima associada (fot), ou seja, a solução ótima (xot, fot); a segunda é a solução ótima (xot, fot) acrescida do número máximo de iterações (h) realizadas para se chegar no resultado encontrado. Observe que o valor associado ao número de iterações (h) está relacionado com a última iteração cujos custos relativos são maiores ou iguais a zero (condição de otimalidade) e, consequentemente, o algoritmo para.
+\newline
+
+No desenvolvimento da função ``funcsimplex.m'' encontra-se a inicialização de ``x'' com as entradas todas nulas, que posteriormente será preenchida com seus devidos valores para a partição básica e como a não básica é nula mantém-se estes valores. O vetor inicializado ``index'' simplesmente se concentra em identificar as colunas da matriz A que representam a matriz identidade. (Como o código foi feito ao se considerar as restrições do problema $Ax \le b$, basta considerar as últimas colunas de A, que representam as variáveis de folga incluídas.)
 \newline
 
 O componente principal da função é um loop (``for''), no qual a cada iteração (atualização) é possível identificar:
 \newline
 
-1) A partição básica pelo comando (matriz): ``B=A(:,C)'' e sua inversa por: ``invB = inv(B)'';
+1) A partição básica pelo comando (matriz): ``B=A(:,index)'' e sua inversa por: ``invB = inv(B)'';
 \newline
 
-2) A solução básica inicial (vetor): ``x(C) = invB*b'';
+2) A solução básica inicial (vetor): ``x(index) = invB*b'';
 \newline
 
-3) O custo básico (vetor): ``cB = c(C)'';
+3) O custo básico (vetor): ``cB = c(index)'';
 \newline
 
 4) O vetor multiplicador simplex: ``lambda = (cB'*invB)' '';
@@ -101,70 +126,55 @@ O componente principal da função é um loop (``for''), no qual a cada iteraç�
 10) Caso não haja nenhuma direção que seja estritamente maior que zero, isso quer dizer que tem-se um problema ilimitado, identificada pela estrutura condicional: ``if (isempty(I))'';
 \newline
 
-11) Determinação do tamanho do passo por: ``epsilon = min(x(C(I))./y(I))'' e, posteriormente, identifiação do índice que sairá da base por: ``L = find(x(C)./y == epsilon)''; (lembre-se de que em (7) já se sabe qal índice entrará na base.)
+11) Determinação do tamanho do passo por: ``epsilon = min(x(index(I))./y(I))'' e, posteriormente, identifiação do índice que sairá da base por: ``L = find(x(index)./y == epsilon)''; (lembre-se de que em (7) já se sabe qal índice entrará na base.)
 \newline
 
-12) Adoção da estratégia simplex, com isso as variáveis básicas devem ser alteradas e calculadas como o seguinte vetor: ``x(C) = x(C) - epsilon*y'';
+12) Adoção da estratégia simplex, com isso as variáveis básicas devem ser alteradas e calculadas como o seguinte vetor: ``x(index) = x(index) - epsilon*y'';
 \newline
 
 13) A variável que era considerada não básica e assim assumia valor nulo, agora, altera-se e assume o valor epsilon de acordo com o comando: ``x(jentra) = epsilon'';
 \newline
 
-14) A atualização dos índices que fazem parte da base é escrito como segue: ``C(lsai) = jentra'';
+14) A atualização dos índices que fazem parte da base é escrito como segue: ``index(lsai) = jentra'';
 \newline
 
 15) Por fim, existe uma estrutura condicional para verifical se o número de iterações máximo foi atingido ou não. Caso tenha atingido e não encontrado a solução ótima por este motivo, deve-se alterar o valor de ``maxit'' para o valor desejado. Observe que de início o valor determinado para ``maxit'' foi de $50$ iterações (valor designado de maneira arbitrária).
 \newline
 \section{Como aplicar a função}
-
-A função do algoritmo simplex, para determinar a solução ótima ou identificar uma solução ilimitada, foi definida como \underline{funcsimplex.m}. Esta função construída lida com problemas de programação linear da forma:
-
-\begin{align*}
-&\text{minimizar}& f(x) = c^{t}x\\  
-&\text{sujeito a:}& Ax \le b, x \ge 0.\\
-\end{align*}  
-
-Na forma padrão, tem-se que:
-
-\begin{align*}
-&\text{minimizar}& f(x) = c^{t}x + 0^{t}s\\  
-&\text{sujeito a:}& Ax + s = b, x \ge 0, s \ge 0\\
-\end{align*}  
-
-de tal forma que os custos são reajustados, ou seja, na forma padrão tem-se que os custos relacionados com as variáveis de folga são nulos.
-\newline
-
 Para executar o algoritmo, deve-se verificar o local onde se salvou a função (o diretório onde encontrá-la). Em Matlab, pode-se seguir os seguintes passos:
 \newline
 
 1) Abra o Matlab como na figura figura 1 nos Anexos;
 \newline
 
-2) Ao lado direito de ``Current Folder'' existe uma caixa com três pontos semelhante a reticências (vide figura 2 em Anexos). Ao clicar nesta, selecione o local onde foi salvo o arquivo ``funcsimplex.m'' (Por exemplo, vide figura 3 em Anexos no qual foi selecionado a área de trabalho, local onde a função do método simplex  (``funcsimplex.m'') foi salva).
+2) Ao lado direito de ``Current Folder'' existe uma caixa com três pontos semelhante a reticências (vide figura 2 em Anexos). Ao clicar nesta, selecione o local onde foi salvo o arquivo ``funcsimplex.m'' (Por exemplo, vide figura 3 em Anexos no qual foi selecionado a área de trabalho, local onde a função do método simplex  (``funcsimplex.m'') foi salva);
 \newline
 
-3) Note que ao selecionar o local (diretório) onde está o arquivo da função, ao lado esquerdo da linha de comando exibirá todos documentos encontrados na pasta (vide figura 4 em Anexos).
+3) Note que ao selecionar o local (diretório) onde está o arquivo da função, ao lado esquerdo da linha de comando exibirá todos documentos encontrados na pasta (vide figura 4 em Anexos);
 \newline
 
-4) Depois da localização em (2) e identificação da função em (3) basta clicar duas vezes na função ``funcsimplex.m'' para visualizar o código comentado (vide figura 5 em Anexos).
+4) Depois da localização em (2) e identificação da função em (3) basta clicar duas vezes na função ``funcsimplex.m'' para visualizar o código comentado (vide figura 5 em Anexos);
 \newline
 
-5) Para inicializar a matriz, os vetores e o número de linhas e colunas como entrada, basta digitá-los como nos exemplos dados (vide, como exemplo, a figura 6 em Anexos). Além disso, observe ao lado direito (no ``Workspace'') da linha de comando que as matrizes foram inicializadas com os valores fornecidos pelo usuário (vide figura 6).
+5) Para inicializar a matriz, os vetores e o número de linhas e colunas como entrada, basta digitá-los como nos exemplos dados (vide, como exemplo, a figura 6 em Anexos). Além disso, observe ao lado direito (no ``Workspace'') da linha de comando que as matrizes foram inicializadas com os valores fornecidos pelo usuário (vide figura 6);
 \newline
 
-6) Para verificar a solução ótima e a função objetivo mínima associada, basta utilizar uma linha de comando como mostrado na figura 7 em Anexos. Caso queira ver a quantidade de iterações utilizadas para se obter a solução ótima basta adicionar simplesmente um argumento na saída, como na figura 8 em Anexos.
+6) Para verificar a solução ótima e a função objetivo mínima associada, basta utilizar uma linha de comando (``[xot, fot] = funcsimplex(m,n,A,b,c)'') como mostrado na figura 7 em Anexos. Caso queira ver a quantidade de iterações utilizadas para se obter a solução ótima basta adicionar simplesmente um argumento na saída (a variável ``h'', e assim tem-se ``[xot, fot, h] = funcsimplex(m,n,A,b,c)''), como na figura 8 em Anexos;
 \newline
 
-7) Para inicializar outra matriz, primeiramente digite na linha de comando ``clear'', para que os valores das variáveis anteriores não sejam reutilizados (vide figura 9). Observe que o ``Workspace'' visto em (5), agora está vazio, assim como quando aberto o Matlab.
+7) Para inicializar outra matriz, primeiramente digite na linha de comando ``clear'', para que os valores das variáveis anteriores não sejam reutilizados (vide figura 9). Observe que o ``Workspace'' visto em (5), agora, está vazio;
 \newline
 
-8) Basta digitar as novas entradas e chamar novamente a função para observar a solução ótima. 
+8) Basta digitar as novas entradas e chamar novamente a função para observar a solução ótima.
 \newline
 
-Caso queira executar com o Octave: com o Octave aberto digitar, por exemplo (sem as aspas duplas): ``cd 'Área de trabalho/''' ou ``cd Downloads/'', ou qual seja o diretório no qual se salvou a função ``funcsimplex.m'', para identificar o local onde ela está. Com isso, o Octave já reconhece os conteúdos do diretório. Agora, basta seguir os mesmos passos de inicialização feitos no Matlab e executar a função da mesma maneira.
+Execução com o Octave: com o Octave aberto digitar, por exemplo (sem as aspas duplas): ``cd 'Área de trabalho/''' ou ``cd Downloads/'', ou qual seja o diretório no qual se salvou a função ``funcsimplex.m'', para identificar o local onde ela está. Com isso, o Octave já reconhece os conteúdos do diretório. Agora, basta seguir os mesmos passos de inicialização e execução da função feitos no Matlab.
 \newline
 
-Como \textbf{entrada}, o usuário fornece a matriz A com as variáveis de \textbf{folga incluídas}, fornece os vetores \textbf{transpostos} b e c relacionados com as restrições e os custos (com os custos nulos das variáveis de folga), respectivamente e o número de linhas e colunas (m e n, respectivamente) da Matriz A na forma \textbf{padronizada} (folgas incluídas). Veja a seguir alguns exemplos de como fazer para inicializar as variáveis mencionadas.
+No momento em que for utilizar a função, fique atento para as seguintes observações abaixo:
+\newline
+
+Como \textbf{entrada}, o usuário fornece a matriz A com as variáveis de \textbf{folga incluídas}, fornece os vetores \textbf{transpostos} b e c (com os custos nulos das variáveis de folga), e o número de linhas (m) e colunas (n) da Matriz A com as \textbf{folgas incluídas}. Veja a seguir como fazer para inicializar as variáveis mencionadas.
 \newline
 
 1) O número de linhas e colunas da matriz A pode ser fornecida, por exemplo, como: ``m = 3; n = 5;''.
@@ -208,7 +218,7 @@ c =
 Para isso deve-se escrever os seguintes comandos (sem o sinal das aspas): ``b = [1 2]';'' e ``c = [5 6 7 0 0]';''. Observe que deve-se colocar o sinal da transposição dos vetores de b e c, caso contrário eles serão considerados como vetores linha e terá problemas na execução do algoritmo.
 \newline
 
-Uma vez inicializada as variáveis de interesse, a maneira de executar o algoritmo para se obter a solução ótima com a função objetivo associada a esta é como se segue:
+Uma vez inicializada as variáveis de interesse, a maneira de executar o algoritmo para se obter a solução ótima, ou seja, o par (xot, fot) é dada por:
 \newline
 
 [xot, fot] = funcsimplex(m,n,A, b, c) (caso se queira ver somente o resultado de x ótimo com o valor associado da função objetivo f) e outra forma de se chamar a função é: [xot, fot, h] = funcsimplex(m,n,A, b, c) (nesta maneira as saídas são: x ótimo que minimiza a função objetivo f, o valor de f em x ótimo, e o número de iterações necessárias/realizadas (identificado como h) para se obter a solução ótima).
@@ -320,5 +330,13 @@ xot = [], fot = - $\infty$, ou seja, não existe um único xot e, assim, um úni
     \caption{Comando ``clear'' para apagar as variáveis que foram utilizadas. Observe que no ``Workspace'' não há nenhuma variável. Caso queira inicializar outros valores de variáveis basta o usuário fornecer os novos valores.}
 \end{figure}
 
+\section{Referências}
+1) ``O algoritmo primal simplex'' e ``SlidesAula7-MS428'' disponibilizados, via Moodle, pela professora;
+\newline
+
+2) ``MATLAB/Simplex tutorial SA305, Spring 2012 Instructor: Phillips'';
+\newline
+
+3) ``GNU Linear Programming Kit, Version 2.1, Implementation of the Revised Simplex Method, February 2001''.
 
 \end{document}
